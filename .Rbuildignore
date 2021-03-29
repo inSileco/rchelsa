@@ -1,0 +1,12 @@
+^renv$
+^renv\.lock$
+^.github/
+^inst/_pkgdown\.yml$
+^\.Rproj\.user$
+^.*\.Rproj$
+^appveyor\.yml$
+^\.travis\.yml$
+^\.gitignore
+^README\.md
+^tmp
+^LICENSE\.md$
