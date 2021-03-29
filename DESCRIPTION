@@ -26,11 +26,13 @@ Imports:
     cli,
     crayon,
     curl,
-    glue
+    glue,
+    utils
 Suggests:
     rmarkdown,
     testthat,
-    vcr
+    vcr,
+    yaml
 URL: https://github.com/inSileco/iseDataRetrieval
 BugReports: https://github.com/inSileco/iseDataRetrieval/issues
 Encoding: UTF-8

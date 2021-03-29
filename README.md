@@ -1,12 +1,23 @@
 # rchelsa
 
-Download chelsa data <https://chelsa-climate.org/>
+Download chelsa data <https://chelsa-climate.org/> 
 
 > CHELSA (Climatologies at high resolution for the earth’s land surface areas) is a very high resolution (30 arc sec, ~1km) global climate data set currently hosted by the Swiss Federal Institute for Forest, Snow and Landscape Research WSL. It is build to provide free access to high resolution climate data for research and application, and is constantly updated and refined.
 
+
 ## Installation 
 
+
+```{R}
+install.packages("remotes")
+remotes::install_github("inSieco/rchelsa")
+```
+
+
+## Coverage 
+
 ## How to
+
 
 ## Documentation 
 
@@ -24,6 +35,14 @@ Download chelsa data <https://chelsa-climate.org/>
 
 ## References 
 
-CHELSA datashould be cited as:
+> (2019). CHELSA [CMIP5] – Climate projections at high resolution for the Earth land surface areas. Version 1.2. GRID-Geneva
+https://datacore-gn.unepgrid.ch/geonetwork/srv/api/records/b2b0abd4-1d95-4167-87fb-d827c3e78a5e
 
-> General citation:Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P. & Kessler, M. (2017) Climatologies at high resolution for the earth’s land surface areas. Scientific Data 4, 170122.
+CHELSA data should be cited as:
+
+> Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P. & Kessler, M. (2017) Climatologies at high resolution for the earth’s land surface areas. Scientific Data 4, 170122.
+
+
+
+<!-- https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2/EUR11/documentation/CHELSA_EUR11_technical_documentation.pdf -->
+<!--  -->

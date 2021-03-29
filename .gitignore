@@ -1,5 +1,7 @@
 # Project specific files 
 tmp/
+CHELSA*
+inst/
 
 # History files
 .Rhistory

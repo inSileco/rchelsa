@@ -6,9 +6,15 @@ NULL
 
 
 # HELPERS
-glue_url <- function(...) glue(..., .sep = "/", .envir = parent.frame(1))
+glue_path <- function(...) {
+  glue(..., .sep = .Platform$file.sep, .envir = parent.frame(1))
+}
+glue_url <- function(...) {
+  glue(..., .sep = "/", .envir = parent.frame(1))
+}
 chelsea_v1_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V1"
 chelsea_v2_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2"
+chelsea_v2_eur_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2/EUR11/obsv"
 
 # from inSilecoMisc
 
@@ -40,10 +46,28 @@ dl_check <- function(url, destfile, ...) {
   if (file.exists(destfile)) {
     msgWarning("skipped (already dowloaded)")
   } else {
-    msgInfo("Accessing", url)
+    
+    msgInfo("Accessing", url, glue("({get_remote_file_size(url)})"))
     curl::curl_download(url, destfile, ...)
     msgSuccess("file downloaded!")
   }
   invisible(TRUE)
 }
+
+dl_data <- function(base_url, file, path) {
+  url <- glue_url(base_url, file)
+  dl_check(url, destfile = glue_path(path, file))
+  url
+}
+
+get_remote_file_size <- function(url) {
+  hdr <- curlGetHeaders(url)
+  tmp <- as.numeric(
+    gsub("\\D", "", hdr[grepl("^Content-Length:", hdr)])
+  )
+  class(tmp) <- "object_size"
+  format(tmp, "auto", standard = "SI")
+}
+
+
 
