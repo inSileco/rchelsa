@@ -1,5 +1,5 @@
 Package: rchelsa
-Title: A package for accessing Chelsa climate data
+Title: A Package for Accessing Chelsa Climate Data
 Date: 2021-03-29
 Version: 0.0.2.9000
 Authors@R: c(
@@ -11,7 +11,7 @@ Authors@R: c(
     comment = c(ORCID = "0000-0001-6619-9874")
     ),
   person(
-    given  = "Nicolas",
+    given   = "Nicolas",
     family  = "Casajus",
     role    = c("ctb"),
     email   = "nicolas.casajus@fondationbiodiversite.fr",
@@ -33,8 +33,8 @@ Suggests:
     testthat,
     vcr,
     yaml
-URL: https://github.com/inSileco/iseDataRetrieval
-BugReports: https://github.com/inSileco/iseDataRetrieval/issues
+URL: https://github.com/inSileco/rchelsa
+BugReports: https://github.com/inSileco/rchelsa/issues
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)

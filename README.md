@@ -10,7 +10,7 @@ Download chelsa data <https://chelsa-climate.org/>
 
 ```{R}
 install.packages("remotes")
-remotes::install_github("inSieco/rchelsa")
+remotes::install_github("inSileco/rchelsa")
 ```
 
 
