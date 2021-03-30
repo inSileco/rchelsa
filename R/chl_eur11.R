@@ -1,6 +1,6 @@
 #' Access High resolution climate data for Europe
 #'
-#' @param period time period (see below).
+#' @param period time period (see below) or "doc" for documentation.
 #' @param var variable name (see XXX).
 #' @param year year only available when period is set to 'daily' or 'yearly'.
 #' @param path path to the folder where files will be stored.
@@ -29,6 +29,8 @@
 chl_eur11 <- function(period = "year", var, year, path = ".") {
   # TODO add check here.
   switch(period,
+    doc = dl_data(glue_url(chl_v2_eur_url, "documentation"), 
+      "CHELSA_EUR11_technical_documentation.pdf", path),
     daily = chl_eur11_daily(var, year, path = "."),
     yearly = chl_eur11_yearly(var, year, path = "."),
     monthly = chl_eur11_monthly(var, year, path = "."),
@@ -39,22 +41,22 @@ chl_eur11 <- function(period = "year", var, year, path = ".") {
 
 chl_eur11_daily <- function(var, year, path = ".") {
   fl <- glue("CHELSA_EUR11_{var}_day_{year}_V1.1.nc")
-  invisible(dl_data(glue_url(chelsea_v2_eur_url, "daily"), fl, path))
+  invisible(dl_data(glue_url(chl_v2_eur_obs_url, "daily"), fl, path))
 }
 
 chl_eur11_yearly <- function(var, year, path = ".") {
   fl <- glue("CHELSA_EUR11_{var}_{year}_V1.1.nc")
-  invisible(dl_data(glue_url(chelsea_v2_eur_url, "annual"), fl, path))
+  invisible(dl_data(glue_url(chl_v2_eur_obs_url, "annual"), fl, path))
 }
 
 chl_eur11_monthly <- function(var, year, path = ".") {
   fl <- glue("CHELSA_EUR11_{var}_mon_1981-2005_V1.1.nc")
-  invisible(dl_data(glue_url(chelsea_v2_eur_url, "monthly"), fl, path))
+  invisible(dl_data(glue_url(chl_v2_eur_obs_url, "monthly"), fl, path))
 }
 
 chl_eur11_normals <- function(var, path = ".") {
   fl <- glue("CHELSA_EUR11_{var}_norm_1981-2005_V1.1.nc")
-  invisible(dl_data(glue_url(chelsea_v2_eur_url, "normals"), fl, path))
+  invisible(dl_data(glue_url(chl_v2_eur_obs_url, "normals"), fl, path))
 }
 
 

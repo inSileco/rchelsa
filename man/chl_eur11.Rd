@@ -7,7 +7,7 @@
 chl_eur11(period = "year", var, year, path = ".")
 }
 \arguments{
-\item{period}{time period (see below).}
+\item{period}{time period (see below) or "doc" for documentation.}
 
 \item{var}{variable name (see XXX).}
 

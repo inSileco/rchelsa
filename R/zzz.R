@@ -12,9 +12,13 @@ glue_path <- function(...) {
 glue_url <- function(...) {
   glue(..., .sep = "/", .envir = parent.frame(1))
 }
-chelsea_v1_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V1"
-chelsea_v2_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2"
-chelsea_v2_eur_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2/EUR11/obsv"
+
+# URL
+chl_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa"
+chl_v1_url <- glue_url(chl_url, "chelsa_V1")
+chl_v2_url <- glue_url(chl_url, "chelsa_V2")
+chl_v2_eur_url <- glue_url(chl_v2_url, "EUR11")
+chl_v2_eur_obs_url <- glue_url(chl_v2_eur_url, "obsv")
 
 # from inSilecoMisc
 

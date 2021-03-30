@@ -29,7 +29,7 @@ get_chelsea_data <- function(categ = "clim", type = "bio", id = 1, path = ".") {
 # https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V1/climatologies/prec/CHELSA_prec_02_V1.2_land.tif
 
 get_chelsea_clim <- function(type, id, path) {
-  base_url <- glue_url(chelsea_v1_url, "climatologies")
+  base_url <- glue_url(chl_v1_url, "climatologies")
   switch(type,
     bio = {
       stopifnot(id %in% 1:19)
