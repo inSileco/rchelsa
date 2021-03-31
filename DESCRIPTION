@@ -1,7 +1,7 @@
 Package: rchelsa
 Title: A Package for Accessing Chelsa Climate Data
-Date: 2021-03-29
-Version: 0.0.2.9000
+Date: 2021-03-30
+Version: 0.0.0.9000
 Authors@R: c(
   person(
     given   = "Kevin", 
@@ -18,7 +18,7 @@ Authors@R: c(
     comment = c(ORCID = "0000-0002-5537-5294")
     )
   )
-Description: Download chelsa data <https://chelsa-climate.org/>.
+Description: Download Chelsa data <https://chelsa-climate.org/>.
 Depends:
     R (>= 3.0)
 License: MIT + file LICENSE
