@@ -6,7 +6,7 @@
 #' @param path path to the folder where files will be stored.
 #' 
 #' @references
-#' https://chelsa-climate.org
+#' <https://chelsa-climate.org>
 #' 
 #' @export 
 
