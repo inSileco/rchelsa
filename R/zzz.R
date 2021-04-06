@@ -1,9 +1,9 @@
 #' @importFrom cli style_bold
 #' @importFrom crayon blue yellow green red
-#' @importFrom curl curl curl_download
+#' @importFrom curl curl curl_download curl_fetch_memory parse_headers
+#' @importFrom curl new_handle handle_setopt
 #' @importFrom glue glue
 NULL
-
 
 # HELPERS
 glue_path <- function(...) {
@@ -30,29 +30,28 @@ msgInfo <- function(..., appendLF = TRUE) {
   invisible(txt)
 }
 
-msgError <- function(...) {
+msgError <- function(..., appendLF = TRUE) {
   txt <- paste(cli::symbol$cross, ...)
-  message(red(txt))
+  message(red(txt), appendLF = appendLF)
   invisible(txt)
 }
 
-msgSuccess <- function(...) {
+msgSuccess <- function(..., appendLF = TRUE) {
   txt <- paste(cli::symbol$tick, ...)
-  message(green(txt))
+  message(green(txt), appendLF = appendLF)
   invisible(txt)
 }
 
-msgWarning <- function(...) {
+msgWarning <- function(..., appendLF = TRUE) {
   txt <- paste(cli::symbol$warning, ...)
-  message(yellow(txt))
+  message(yellow(txt), appendLF = appendLF)
   invisible(txt)
 }
 
 dl_check <- function(url, destfile, ...) {
   if (file.exists(destfile)) {
-    msgWarning("skipped (already dowloaded)")
+    msgWarning("skipped (already downloaded)")
   } else {
-    
     msgInfo("Accessing", url, glue("({get_remote_file_size(url)})"))
     curl::curl_download(url, destfile, ...)
     msgSuccess("file downloaded!")
@@ -67,13 +66,18 @@ dl_data <- function(base_url, file, path) {
 }
 
 get_remote_file_size <- function(url) {
-  hdr <- curlGetHeaders(url)
-  tmp <- as.numeric(
-    gsub("\\D", "", hdr[grepl("^Content-Length:", hdr)])
-  )
-  class(tmp) <- "object_size"
-  format(tmp, "auto", standard = "SI")
+  # https://github.com/r-lib/httr/issues/612
+  h <- new_handle()
+  handle_setopt(h, nobody = TRUE)
+  req <- curl_fetch_memory(url, handle = h)
+  hdr <- parse_headers(req$headers)
+  tmp <- gsub("\\D", "", hdr[grepl("^Content-Length:", hdr)])
+  if (length(tmp)) {
+    format(
+      structure(as.numeric(tmp),class = "object_size"), 
+      "auto", standard = "SI"
+    )    
+  } else "unknown"
 }
-
 
 
