@@ -23,8 +23,8 @@ Access CHELSA timeseries
 }
 \examples{
 \dontrun{
- chl_ts("prec", 1982, 3)
- chl_ts("gts30", 1982)
+chl_ts("prec", 1982, 3)
+chl_ts("gts30", 1982)
 }
 }
 \references{

@@ -13,14 +13,15 @@ glue_url <- function(...) {
   glue(..., .sep = "/", .envir = parent.frame(1))
 }
 
+
 # URL
 chl_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa"
 chl_v1_url <- glue_url(chl_url, "chelsa_V1")
 chl_v2_url <- glue_url(chl_url, "chelsa_V2")
 chl_v2_eur_url <- glue_url(chl_v2_url, "EUR11")
 chl_v2_eur_obs_url <- glue_url(chl_v2_eur_url, "obsv")
-chl_v2_glb_url <- glue_url(chl_v2_url, "GLOBAL") 
-chl_v2_glb_mod_url <- glue_url(chl_v2_glb_url, "climatologies") 
+chl_v2_glb_url <- glue_url(chl_v2_url, "GLOBAL")
+chl_v2_glb_mod_url <- glue_url(chl_v2_glb_url, "climatologies")
 
 # from inSilecoMisc
 
@@ -74,10 +75,11 @@ get_remote_file_size <- function(url) {
   tmp <- gsub("\\D", "", hdr[grepl("^Content-Length:", hdr)])
   if (length(tmp)) {
     format(
-      structure(as.numeric(tmp),class = "object_size"), 
-      "auto", standard = "SI"
-    )    
-  } else "unknown"
+      structure(as.numeric(tmp), class = "object_size"),
+      "auto",
+      standard = "SI"
+    )
+  } else {
+    "unknown"
+  }
 }
-
-

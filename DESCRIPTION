@@ -1,7 +1,7 @@
 Package: rchelsa
 Title: A Package for Accessing Chelsa Climate Data
-Date: 2021-03-30
-Version: 0.0.0.9000
+Date: 2023-11-15
+Version: 0.0.0.9001
 Authors@R: c(
   person(
     given   = "Kevin", 
@@ -20,21 +20,19 @@ Authors@R: c(
   )
 Description: Download Chelsa data <https://chelsa-climate.org/>.
 Depends:
-    R (>= 3.0)
+    R (>= 4.2)
 License: MIT + file LICENSE
 Imports:
     cli,
     crayon,
     curl,
-    glue,
-    utils
+    glue
 Suggests:
     rmarkdown,
     testthat,
-    vcr,
     yaml
 URL: https://github.com/inSileco/rchelsa
 BugReports: https://github.com/inSileco/rchelsa/issues
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)

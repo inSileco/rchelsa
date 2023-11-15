@@ -2,7 +2,7 @@
 % Please edit documentation in R/chl_europ.R
 \name{chl_europ_obs}
 \alias{chl_europ_obs}
-\title{Access High resolution climate data for Europe.}
+\title{Access high resolution climate data for Europe.}
 \usage{
 chl_europ_obs(period = "year", var, year, path = ".")
 }
@@ -16,7 +16,7 @@ chl_europ_obs(period = "year", var, year, path = ".")
 \item{path}{path to the folder where files will be stored.}
 }
 \description{
-Access High resolution climate data for Europe.
+Access high resolution climate data for Europe.
 }
 \details{
 Time periods (\code{periods}) are as follows:

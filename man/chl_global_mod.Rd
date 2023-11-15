@@ -68,11 +68,11 @@ Chelsa V2
 }
 \section{Functions}{
 \itemize{
-\item \code{chl_global_obsv_daily}: observed data daily (for 1980).
+\item \code{chl_global_obsv_daily()}: observed data daily (for 1980).
 
-\item \code{chl_global_obsv_monthly}: observed data monthly (from 1980 up to 2018) .
+\item \code{chl_global_obsv_monthly()}: observed data monthly (from 1980 up to 2018) .
+
 }}
-
 \examples{
 \dontrun{
  chl_global_mod(var = "pr", val = 1, model = "ukesm1", scenario = "ssp370", horizon = 2010) 

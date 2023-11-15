@@ -1,4 +1,4 @@
-#' Access High resolution climate data for Europe.
+#' Access high resolution climate data for Europe.
 #'
 #' @param period time period (see below) or "doc" for documentation.
 #' @param var variable name (see XXX).

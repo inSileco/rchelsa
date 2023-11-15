@@ -1,7 +1,7 @@
 #' Access CHELSA timeseries
 #'
 #' @param var variable name.
-#' @param year year. 
+#' @param year year.
 #' @param val optional.
 #' @param path path to the folder where files will be stored.
 #'
@@ -11,14 +11,13 @@
 #' @references
 #' * <https://chelsa-climate.org>
 #' * Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P., Kessler, M.(2017) Data from: Climatologies at high resolution for the earth’s land surface areas. Dryad Digital Repository. doi.org/10.5061/dryad.kd1d4.
-#' 
+#'
 #' @export
 #' @examples
 #' \dontrun{
-#'  chl_ts("prec", 1982, 3)
-#'  chl_ts("gts30", 1982)
+#' chl_ts("prec", 1982, 3)
+#' chl_ts("gts30", 1982)
 #' }
-
 chl_ts <- function(var, year, val = NULL, path = ".") {
   fl <- get_filename_ts(var, year, val)
   url <- glue_url(chl_v1_url, "timeseries", var)
