@@ -15,11 +15,11 @@ glue_url <- function(...) {
 
 
 # URL
-chl_url <- "https://os.zhdk.cloud.switch.ch/envicloud/chelsa"
-chl_v1_url <- glue_url(chl_url, "chelsa_V1")
-chl_v2_url <- glue_url(chl_url, "chelsa_V2")
+chl_url <- "https://os.zhdk.cloud.switch.ch"
+chl_v1_url <- glue_url(chl_url, "chelsav1")
+chl_v2_url <- glue_url(chl_url, "chelsav2")
 chl_v2_eur_url <- glue_url(chl_v2_url, "EUR11")
-chl_v2_eur_obs_url <- glue_url(chl_v2_eur_url, "obsv")
+chl_v2_eur_obs_url <- glue_url(chl_v2_eur_url, "obs")
 chl_v2_glb_url <- glue_url(chl_v2_url, "GLOBAL")
 chl_v2_glb_mod_url <- glue_url(chl_v2_glb_url, "climatologies")
 
